@@ -1,0 +1,44 @@
+{"manifest_version": 2,
+        "name": "Frontier",
+        "description": "TBD",
+        "version": "1.0",
+        "background":{
+            "scripts":[
+                "jquery-3.1.1.min.js",
+                "popupscript.js"
+            ],
+            "persistent": false
+        },
+        "content_scripts": [
+            {
+                "matches": [
+                    "*://*/*"
+                ],
+                "js": [
+                    "jquery-3.1.1.min.js",
+                    "thisisgood.js"
+                ],
+                "run_at": "document_end"
+            }
+        ],
+        "permissions": [
+            "contextMenus",
+            "tabs",
+            "http://*/*",
+            "https://*/*",
+            "storage",
+            "activeTab"
+        ],
+        "browser_action": {
+            "default_popup": "popup.html",
+            "default_icon": {
+                "16": "images/square_image.png"
+            }
+        },
+        
+        "web_accessible_resources": [
+          "images/*.png",
+          "images/*.jpg"
+        ]
+}
+
